@@ -1,4 +1,3 @@
-#!/home/incode7/PycharmProjects/html_parser/venv/bin/python
 import os
 import sys
 sys.setrecursionlimit(2000)
