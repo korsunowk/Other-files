@@ -1,16 +1,12 @@
 #!/home/incode7/PycharmProjects/html_parser/venv/bin/python
 import os
 import sys
-sys.setrecursionlimit(10900)
-
-counter = 0
+sys.setrecursionlimit(2000)
 
 
 def find_dirs(home_directory, start=True, iteration=2, home='', old_dir=-1,
               count_files=0, count_directories=0, find_file_or_directory=''):
     try:
-        global counter
-        counter += 1
         if start:
             print(home_directory.split('/')[-1] + ' >')
             home = home_directory.replace("/"+home_directory.split('/')[-1], "")
@@ -78,7 +74,6 @@ def find_dirs(home_directory, start=True, iteration=2, home='', old_dir=-1,
             else:
                 print('\nDirectories: ' + str(count_directories))
                 print('Files: ' + str(count_files))
-                print('Counter: ' + str(counter))
                 return True
 
     except Exception as e:
@@ -89,17 +84,15 @@ def find_dirs(home_directory, start=True, iteration=2, home='', old_dir=-1,
 os.chdir('../')
 
 if sys.version_info[0] == 2:
-    dir_to_count = raw_input("Input path to folder: \nExample: /home/incode7/PycharmProjects/<name folder> \n ")
+    dir_to_count = raw_input("Input path to folder: \nExample: /path/to/directory/<name folder> \n ")
     print('_______________________________________________________________________________________________________')
     dir_or_file = raw_input("Input name of directory or file to find him. \n Input 'Enter' if you do not want anything to seek.")
 else:
     dir_to_count = input("Input path to folder: \n"
-                         "Example: /home/incode7/PycharmProjects/<name folder> \n ")
+                         "Example: /path/to/directory/<name folder> \n ")
     print('_______________________________________________________________________________________________________')
     dir_or_file = input(" Input name of directory or file to find him: "
                         "Input 'Enter' if you do not want anything to seek: ")
 
-# dir_to_count = '/home/incode7/PycharmProjects/datingapp'
-# dir_or_file = '0001_initial.cpython-34.pyc'
 
 find_dirs(dir_to_count, find_file_or_directory=dir_or_file)
