@@ -1,2 +1,2 @@
 # Other-files
-Some helper scripts on Python/Django
+Some helpers scripts on Python/Django
