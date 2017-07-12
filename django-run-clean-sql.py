@@ -1,5 +1,4 @@
 from django.db import connection
-from django.conf import settings
 from django.template import Context, Template
 
 def run_raw_sql(query_template, params):
