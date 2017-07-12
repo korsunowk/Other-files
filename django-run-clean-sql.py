@@ -1,6 +1,5 @@
 from django.db import connection
 from django.conf import settings
-from django.core.mail import send_mail as django_send_mail
 from django.template import Context, Template
 
 def run_raw_sql(query_template, params):
