@@ -58,3 +58,4 @@ WHERE games.season_id = {{ season }}
   AND games.league_id = {{ league }}
 
 GROUP BY players.id, players.first_name, players.last_name
+ 
