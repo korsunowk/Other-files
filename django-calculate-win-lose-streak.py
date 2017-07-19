@@ -7,3 +7,6 @@ for game in games_stats.order_by('-game__game_date'):
     else:
         win_streak.append([])
         lose_streak[-1].append(game)
+
+win_streak = max(win_streak, key=lambda x: len(x))
+lose_streak = max(lose_streak, key=lambda x: len(x))
